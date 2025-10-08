@@ -1,0 +1,15 @@
+C:\Users\marce\Desktop\GitHub\ItConsulting\Lezione-S2-D2\Lezione-S2-D2\bin\Debug\net9.0\Lezione-S2-D2.exe
+C:\Users\marce\Desktop\GitHub\ItConsulting\Lezione-S2-D2\Lezione-S2-D2\bin\Debug\net9.0\Lezione-S2-D2.deps.json
+C:\Users\marce\Desktop\GitHub\ItConsulting\Lezione-S2-D2\Lezione-S2-D2\bin\Debug\net9.0\Lezione-S2-D2.runtimeconfig.json
+C:\Users\marce\Desktop\GitHub\ItConsulting\Lezione-S2-D2\Lezione-S2-D2\bin\Debug\net9.0\Lezione-S2-D2.dll
+C:\Users\marce\Desktop\GitHub\ItConsulting\Lezione-S2-D2\Lezione-S2-D2\bin\Debug\net9.0\Lezione-S2-D2.pdb
+C:\Users\marce\Desktop\GitHub\ItConsulting\Lezione-S2-D2\Lezione-S2-D2\obj\Debug\net9.0\Lezione-S2-D2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\marce\Desktop\GitHub\ItConsulting\Lezione-S2-D2\Lezione-S2-D2\obj\Debug\net9.0\Lezione-S2-D2.AssemblyInfoInputs.cache
+C:\Users\marce\Desktop\GitHub\ItConsulting\Lezione-S2-D2\Lezione-S2-D2\obj\Debug\net9.0\Lezione-S2-D2.AssemblyInfo.cs
+C:\Users\marce\Desktop\GitHub\ItConsulting\Lezione-S2-D2\Lezione-S2-D2\obj\Debug\net9.0\Lezione-S2-D2.csproj.CoreCompileInputs.cache
+C:\Users\marce\Desktop\GitHub\ItConsulting\Lezione-S2-D2\Lezione-S2-D2\obj\Debug\net9.0\Lezione-S2-D2.sourcelink.json
+C:\Users\marce\Desktop\GitHub\ItConsulting\Lezione-S2-D2\Lezione-S2-D2\obj\Debug\net9.0\Lezione-S2-D2.dll
+C:\Users\marce\Desktop\GitHub\ItConsulting\Lezione-S2-D2\Lezione-S2-D2\obj\Debug\net9.0\refint\Lezione-S2-D2.dll
+C:\Users\marce\Desktop\GitHub\ItConsulting\Lezione-S2-D2\Lezione-S2-D2\obj\Debug\net9.0\Lezione-S2-D2.pdb
+C:\Users\marce\Desktop\GitHub\ItConsulting\Lezione-S2-D2\Lezione-S2-D2\obj\Debug\net9.0\Lezione-S2-D2.genruntimeconfig.cache
+C:\Users\marce\Desktop\GitHub\ItConsulting\Lezione-S2-D2\Lezione-S2-D2\obj\Debug\net9.0\ref\Lezione-S2-D2.dll
