@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\marce\\Desktop\\GitHub\\ItConsulting\\Lezione-S2-D5\\Lezione-S2-D5\\Lezione-S2-D5.csproj",
+      "projectUniqueName": "C:\\Users\\marce\\Desktop\\GitHub\\Miranda-C-Sharp-Academy-ItConsulting\\Lezione-W2-D5\\Lezione-S2-D5\\Lezione-S2-D5.csproj",
       "projectName": "Lezione-S2-D5",
-      "projectPath": "C:\\Users\\marce\\Desktop\\GitHub\\ItConsulting\\Lezione-S2-D5\\Lezione-S2-D5\\Lezione-S2-D5.csproj",
+      "projectPath": "C:\\Users\\marce\\Desktop\\GitHub\\Miranda-C-Sharp-Academy-ItConsulting\\Lezione-W2-D5\\Lezione-S2-D5\\Lezione-S2-D5.csproj",
       "packagesPath": "C:\\Users\\marce\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\marce\\Desktop\\GitHub\\ItConsulting\\Lezione-S2-D5\\Lezione-S2-D5\\obj\\",
+      "outputPath": "C:\\Users\\marce\\Desktop\\GitHub\\Miranda-C-Sharp-Academy-ItConsulting\\Lezione-W2-D5\\Lezione-S2-D5\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\marce\\AppData\\Roaming\\NuGet\\NuGet.Config"
