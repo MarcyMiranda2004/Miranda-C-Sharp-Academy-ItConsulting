@@ -345,7 +345,7 @@ public class Programma
                     break;
 
                 case 0:
-                    Console.WriteLine("🏁 Uscita dal programma Formazione...");
+                    Console.WriteLine("Uscita dal programma Formazione...");
                     break;
 
                 default:
