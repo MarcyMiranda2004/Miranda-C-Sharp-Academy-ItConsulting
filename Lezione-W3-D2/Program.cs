@@ -4,6 +4,8 @@ using EssFabbricaVeicolo.Auto;
 using EssFabbricaVeicolo.Moto;
 using EssFabbricaVeicolo.Camion;
 using EssFabbricaVeicolo.VeicoloFactory;
+using EssDraw;
+using EssDraw.ShapeCreator;
 
 public class Program
 {
@@ -16,6 +18,7 @@ public class Program
             Console.WriteLine($"Che esercizio vuoi vedere ?");
             Console.WriteLine($"[1] Sistema");
             Console.WriteLine($"[2] Fabbrica Veicoli");
+            Console.WriteLine($"[3] Draw");
             Console.WriteLine($"[0] Esci");
             Console.WriteLine($"Scelta:");
             scelta = int.Parse(Console.ReadLine());
@@ -29,6 +32,10 @@ public class Program
 
                 case 2:
                     EssFabbricaVeicoli();
+                    break;
+
+                case 3:
+                    EssDraw();
                     break;
 
                 case 0:
@@ -118,7 +125,32 @@ public class Program
                 Console.WriteLine($"Errore: tipo non errato o non presente");
             }
         } while (continua);
+    }
 
+    public static void EssDraw()
+    {
+        bool cont = true;
+        string drawType;
 
+        do
+        {
+            Console.WriteLine();
+            Console.WriteLine($"Write the shape do you want to draw or Esc for closing de program");
+            drawType = Console.ReadLine();
+            Console.WriteLine();
+
+            if (drawType == "Esc") { cont = false; }
+
+            IShape newShape = ShapeCreator.CreateShape(drawType);
+
+            if (newShape != null)
+            {
+                newShape.Draw();
+            }
+            else
+            {
+                Console.WriteLine($"Error: Shape type uncorrected or not exist");
+            }
+        } while (cont);
     }
 }
