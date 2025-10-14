@@ -1,11 +1,20 @@
 ﻿using EssSistemaConfSis;
-using EssFabbricaVeicolo;
-using EssFabbricaVeicolo.Auto;
-using EssFabbricaVeicolo.Moto;
-using EssFabbricaVeicolo.Camion;
-using EssFabbricaVeicolo.VeicoloFactory;
+
+// using EssFabbricaVeicolo;
+// using EssFabbricaVeicolo.Auto;
+// using EssFabbricaVeicolo.Moto;
+// using EssFabbricaVeicolo.Camion;
+// using EssFabbricaVeicolo.VeicoloFactory;
+
 using EssDraw;
 using EssDraw.ShapeCreator;
+
+using EssCreaRegistraVeicolo;
+using EssCreaRegistraVeicolo.Auto;
+using EssCreaRegistraVeicolo.Moto;
+using EssCreaRegistraVeicolo.Camion;
+using EssCreaRegistraVeicolo.RegistraVeicoli;
+using EssCreaRegistraVeicolo.VeicoloFactory;
 
 public class Program
 {
@@ -19,6 +28,7 @@ public class Program
             Console.WriteLine($"[1] Sistema");
             Console.WriteLine($"[2] Fabbrica Veicoli");
             Console.WriteLine($"[3] Draw");
+            Console.WriteLine($"[4] Crea e Registra Veicolo");
             Console.WriteLine($"[0] Esci");
             Console.WriteLine($"Scelta:");
             scelta = int.Parse(Console.ReadLine());
@@ -31,11 +41,15 @@ public class Program
                     break;
 
                 case 2:
-                    EssFabbricaVeicoli();
+                    // EssFabbricaVeicoli();
                     break;
 
                 case 3:
                     EssDraw();
+                    break;
+
+                case 4:
+                    EssCreaRegistraVeicolo();
                     break;
 
                 case 0:
@@ -99,33 +113,33 @@ public class Program
         Console.WriteLine("ModuloB - Imposta Tema = Chiaro");
     }
 
-    public static void EssFabbricaVeicoli()
-    {
-        bool continua = true;
-        string tipoVeicolo;
+    // public static void EssFabbricaVeicoli()
+    // {
+    //     bool continua = true;
+    //     string tipoVeicolo;
 
-        do
-        {
-            Console.WriteLine();
-            Console.WriteLine($"Inserisci il tipo di veicolo da creare o scrivi Esci per uscire:");
-            tipoVeicolo = Console.ReadLine();
-            Console.WriteLine();
+    //     do
+    //     {
+    //         Console.WriteLine();
+    //         Console.WriteLine($"Inserisci il tipo di veicolo da creare o scrivi Esci per uscire:");
+    //         tipoVeicolo = Console.ReadLine();
+    //         Console.WriteLine();
 
-            if (tipoVeicolo == "Esci") { continua = false; }
+    //         if (tipoVeicolo == "Esci") { continua = false; }
 
-            IVeicolo nuovoVeicolo = VeicoloFactory.CreaVeicolo(tipoVeicolo);
+    //         IVeicolo nuovoVeicolo = VeicoloFactory.CreaVeicolo(tipoVeicolo);
 
-            if (nuovoVeicolo != null)
-            {
-                nuovoVeicolo.Avvia();
-                nuovoVeicolo.MostraTipo();
-            }
-            else
-            {
-                Console.WriteLine($"Errore: tipo non errato o non presente");
-            }
-        } while (continua);
-    }
+    //         if (nuovoVeicolo != null)
+    //         {
+    //             nuovoVeicolo.Avvia();
+    //             nuovoVeicolo.MostraTipo();
+    //         }
+    //         else
+    //         {
+    //             Console.WriteLine($"Errore: tipo non errato o non presente");
+    //         }
+    //     } while (continua);
+    // }
 
     public static void EssDraw()
     {
@@ -152,5 +166,35 @@ public class Program
                 Console.WriteLine($"Error: Shape type uncorrected or not exist");
             }
         } while (cont);
+    }
+
+    public static void EssCreaRegistraVeicolo()
+    {
+        bool continua = true;
+        string tipoVeicolo;
+
+        do
+        {
+            Console.WriteLine();
+            Console.WriteLine($"Inserisci il tipo di veicolo da creare o scrivi Esci per uscire:");
+            tipoVeicolo = Console.ReadLine();
+            Console.WriteLine();
+
+            if (tipoVeicolo == "Esci") { continua = false; }
+
+            Veicolo nuovoVeicolo = VeicoloFactory.CreaVeicolo(tipoVeicolo);
+
+            RegistraVeicoli rv = RegistraVeicoli.GetInstance();
+
+            if (nuovoVeicolo != null)
+            {
+                rv.Registra(nuovoVeicolo);
+                rv.StampaVeicoli();
+            }
+            else
+            {
+                Console.WriteLine($"Errore: tipo non errato o non presente");
+            }
+        } while (continua);
     }
 }

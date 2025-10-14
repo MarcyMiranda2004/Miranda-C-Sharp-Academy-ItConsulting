@@ -2,9 +2,9 @@ using EssDraw;
 
 namespace EssDraw.Circle
 {
-    public class Circle : IShape
+    public class Circle : Shape
     {
-        public void Draw()
+        public override void Draw()
         {
             Console.WriteLine($"Draw a Circle");
         }

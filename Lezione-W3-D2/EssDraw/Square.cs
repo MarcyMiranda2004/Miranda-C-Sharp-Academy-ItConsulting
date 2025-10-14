@@ -2,9 +2,9 @@ using EssDraw;
 
 namespace EssDraw.Square
 {
-    public class Square : IShape
+    public class Square : Shape
     {
-        public void Draw()
+        public override void Draw()
         {
             Console.WriteLine($"Draw a Square");
         }
