@@ -1,6 +1,8 @@
+using EssFabbricaVeicolo.Veicolo;
+
 namespace EssFabbricaVeicolo.Motoscafo
 {
-    public class Motoscafo : IVeicolo
+    public class Motoscafo : VeicoloAbs, IVeicolo
     {
         public void Avvia()
         {
