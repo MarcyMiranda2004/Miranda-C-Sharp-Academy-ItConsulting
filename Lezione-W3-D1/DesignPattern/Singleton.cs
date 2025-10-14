@@ -29,6 +29,7 @@ public sealed class Singleton
                     }
                 }
             }
+
             return _instance;
         }
     }
