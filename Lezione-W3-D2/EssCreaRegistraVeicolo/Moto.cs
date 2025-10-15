@@ -13,3 +13,26 @@ namespace EssCreaRegistraVeicolo.Moto
         }
     }
 }
+
+/* 
+Decorator
+
+
+Decorator incapsula un
+IComponent e la sua Operation()
+di default lo delega
+internamente.
+
+
+ConcreteDecoratorA e
+ConcreteDecoratorB estendono
+Decorator, override Operation()
+per infiocchettare logica custom
+prima/dopo la chiamata interna.
+
+
+In Program.Main si vede come
+costruire catene di decorator,
+applicando più comportamenti in
+cascata.
+ */
