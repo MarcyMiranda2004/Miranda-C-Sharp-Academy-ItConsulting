@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using EssBar;
+using Lezione_W3_D3.EssPasticceria;
 
 class Program
 {
@@ -11,6 +12,7 @@ class Program
         {
             Console.WriteLine($"che esercizio vuoi vedere?");
             Console.WriteLine($"[1] Bar");
+            Console.WriteLine($"[2] Pasticceria");
             Console.WriteLine($"[0] Esci");
             Console.WriteLine($"Scelta:");
             scelta = int.Parse(Console.ReadLine());
@@ -19,6 +21,10 @@ class Program
             {
                 case 1:
                     EssBar();
+                    break;
+
+                case 2:
+                    EssPasticceria();
                     break;
 
                 case 0:
@@ -125,5 +131,31 @@ class Program
             Console.WriteLine();
 
         } while (true);
+    }
+
+    public static void EssPasticceria()
+    {
+        bool continua = true;
+        string tortaBase;
+
+        do
+        {
+            Console.WriteLine($"inserisci la torta da creare o Esci per uscire");
+            tortaBase = Console.ReadLine();
+
+            if (tortaBase.ToLower() == "esci") { continua = false; }
+
+            TortaAbs nuovaTorta = TortaFactory.CreaTorta(tortaBase);
+
+            if (nuovaTorta != null)
+            {
+                nuovaTorta.Descrizione();
+            }
+            else
+            {
+                Console.WriteLine($"Errore, {nuovaTorta} non è un tipo valido");
+            }
+
+        } while (continua);
     }
 }
