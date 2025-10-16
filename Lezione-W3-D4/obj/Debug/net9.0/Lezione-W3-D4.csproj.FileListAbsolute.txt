@@ -1,0 +1,15 @@
+C:\Users\marce\Desktop\GitHub\Miranda-C-Sharp-Academy-ItConsulting\Lezione-W3-D4\bin\Debug\net9.0\Lezione-W3-D4.exe
+C:\Users\marce\Desktop\GitHub\Miranda-C-Sharp-Academy-ItConsulting\Lezione-W3-D4\bin\Debug\net9.0\Lezione-W3-D4.deps.json
+C:\Users\marce\Desktop\GitHub\Miranda-C-Sharp-Academy-ItConsulting\Lezione-W3-D4\bin\Debug\net9.0\Lezione-W3-D4.runtimeconfig.json
+C:\Users\marce\Desktop\GitHub\Miranda-C-Sharp-Academy-ItConsulting\Lezione-W3-D4\bin\Debug\net9.0\Lezione-W3-D4.dll
+C:\Users\marce\Desktop\GitHub\Miranda-C-Sharp-Academy-ItConsulting\Lezione-W3-D4\bin\Debug\net9.0\Lezione-W3-D4.pdb
+C:\Users\marce\Desktop\GitHub\Miranda-C-Sharp-Academy-ItConsulting\Lezione-W3-D4\obj\Debug\net9.0\Lezione-W3-D4.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\marce\Desktop\GitHub\Miranda-C-Sharp-Academy-ItConsulting\Lezione-W3-D4\obj\Debug\net9.0\Lezione-W3-D4.AssemblyInfoInputs.cache
+C:\Users\marce\Desktop\GitHub\Miranda-C-Sharp-Academy-ItConsulting\Lezione-W3-D4\obj\Debug\net9.0\Lezione-W3-D4.AssemblyInfo.cs
+C:\Users\marce\Desktop\GitHub\Miranda-C-Sharp-Academy-ItConsulting\Lezione-W3-D4\obj\Debug\net9.0\Lezione-W3-D4.csproj.CoreCompileInputs.cache
+C:\Users\marce\Desktop\GitHub\Miranda-C-Sharp-Academy-ItConsulting\Lezione-W3-D4\obj\Debug\net9.0\Lezione-W3-D4.sourcelink.json
+C:\Users\marce\Desktop\GitHub\Miranda-C-Sharp-Academy-ItConsulting\Lezione-W3-D4\obj\Debug\net9.0\Lezione-W3-D4.dll
+C:\Users\marce\Desktop\GitHub\Miranda-C-Sharp-Academy-ItConsulting\Lezione-W3-D4\obj\Debug\net9.0\refint\Lezione-W3-D4.dll
+C:\Users\marce\Desktop\GitHub\Miranda-C-Sharp-Academy-ItConsulting\Lezione-W3-D4\obj\Debug\net9.0\Lezione-W3-D4.pdb
+C:\Users\marce\Desktop\GitHub\Miranda-C-Sharp-Academy-ItConsulting\Lezione-W3-D4\obj\Debug\net9.0\Lezione-W3-D4.genruntimeconfig.cache
+C:\Users\marce\Desktop\GitHub\Miranda-C-Sharp-Academy-ItConsulting\Lezione-W3-D4\obj\Debug\net9.0\ref\Lezione-W3-D4.dll
