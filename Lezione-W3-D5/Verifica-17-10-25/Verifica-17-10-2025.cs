@@ -171,9 +171,82 @@ public class DynamicPricing : IPriceStrategy
 #endregion
 
 #region OBSERVER
+public class Order
+{
+    private List<ProductAbs> _items = new List<ProductAbs>();
+    private IPriceStrategy _pricingStrategy;
+    private List<IObserver> _observers = new List<IObserver>();
 
+    public Order(IPriceStrategy pricingStrategy)
+    {
+        _pricingStrategy = pricingStrategy;
+    }
+
+    public void Attach(IObserver observer) => _observers.Add(observer);
+    public void Detach(IObserver observer) => _observers.Remove(observer);
+    private void Notify(string message)
+    {
+        foreach (var obs in _observers)
+            obs.Update(message);
+        AppContext.Instance.Notify(message);
+    }
+
+    public void AddItem(ProductAbs product)
+    {
+        _items.Add(product);
+        Notify($"Added {product.Nome}");
+    }
+
+    public void RemoveItem(ProductAbs product)
+    {
+        _items.Remove(product);
+        Notify($"Removed {product.Nome}");
+    }
+
+    public void ChangePricing(IPriceStrategy newStrategy)
+    {
+        _pricingStrategy = newStrategy;
+        Notify("Pricing strategy changed");
+    }
+
+    public decimal Checkout()
+    {
+        decimal total = 0;
+        foreach (var item in _items)
+            total += _pricingStrategy.CalcolaPrezzo(item);
+        Notify($"Checkout total: {total}{AppContext.Instance.Valuta}");
+        return total;
+    }
+}
+
+public interface IObserver { void Update(string message); }
+
+public class UIObserver : IObserver { public void Update(string message) => Console.WriteLine($"[UI] {message}"); }
+public class LogObserver : IObserver { public void Update(string message) => Console.WriteLine($"[LOG] {message}"); }
 #endregion
 
 #region MAIN
+// class Program
+// {
+//     static void Main()
+//     {
+//         var order = new Order(new StandardPrice());
 
+//         order.Attach(new UIObserver());
+//         order.Attach(new LogObserver());
+
+//         var tshirt = ProductFactory.CreaProdotto("TSHIRT");
+//         tshirt = new FrontPrint(tshirt);
+//         tshirt = new GiftWrap(tshirt);
+
+//         var mug = ProductFactory.CreaProdotto("MUG");
+//         mug = new DigitalWaranty(mug);
+
+//         order.AddItem(tshirt);
+//         order.AddItem(mug);
+
+//         order.ChangePricing(new PromoPricing());
+//         order.Checkout();
+//     }
+// }
 #endregion
