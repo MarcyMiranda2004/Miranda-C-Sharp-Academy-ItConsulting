@@ -68,36 +68,32 @@ public static class UserFactory
 #endregion
 
 #region Programma principale
-class Program
-{
-    public static void Main(string[] args)
-    {
-        // Dichiarazione del "database"
-        var dataBase = InMemory.Instance;
+// class Program
+// {
+//     public static void Main(string[] args)
+//     {
 
-        // Creazione utente
-        var user1 = UserFactory.CreateUser("Marcello", "marcellomiranda2006@gmail.com");
-        dataBase.Users[user1.Id] = user1;
-        Console.WriteLine($"Utente creato: {user1.Username}");
+//         var dataBase = InMemory.Instance;
 
-        // Registrazione azione LOGIN
-        var action1 = UserFactory.CreateAction("LOGIN", "Accesso al sistema");
+//         var user1 = UserFactory.CreateUser("Marcello", "marcellomiranda2006@gmail.com");
+//         dataBase.Users[user1.Id] = user1;
+//         Console.WriteLine($"Utente creato: {user1.Username}");
 
-        if (!dataBase.ActionsByUser.ContainsKey(user1.Id))
-            dataBase.ActionsByUser[user1.Id] = new List<ActionLog>();
+//         var action1 = UserFactory.CreateAction("LOGIN", "Accesso al sistema");
 
-        dataBase.ActionsByUser[user1.Id].Add(action1);
+//         if (!dataBase.ActionsByUser.ContainsKey(user1.Id))
+//             dataBase.ActionsByUser[user1.Id] = new List<ActionLog>();
 
-        // Registrazione azione LOGOUT
-        var action2 = UserFactory.CreateAction("LOGOUT", "Uscita dal sistema");
-        dataBase.ActionsByUser[user1.Id].Add(action2);
+//         dataBase.ActionsByUser[user1.Id].Add(action1);
 
-        // Interrogazione dello storico azioni
-        Console.WriteLine("\nStorico Azioni:");
-        foreach (var log in dataBase.ActionsByUser[user1.Id])
-        {
-            Console.WriteLine($"[{log.Timestamp}] {log.ActionType} - {log.Metadata}");
-        }
-    }
-}
+//         var action2 = UserFactory.CreateAction("LOGOUT", "Uscita dal sistema");
+//         dataBase.ActionsByUser[user1.Id].Add(action2);
+
+//         Console.WriteLine("\nStorico Azioni:");
+//         foreach (var log in dataBase.ActionsByUser[user1.Id])
+//         {
+//             Console.WriteLine($"[{log.Timestamp}] {log.ActionType} - {log.Metadata}");
+//         }
+//     }
+// }
 #endregion
