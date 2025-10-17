@@ -170,10 +170,10 @@ public class DynamicPricing : IPriceStrategy
 }
 #endregion
 
+#region OBSERVER
 
+#endregion
 
+#region MAIN
 
-
-
-
-
+#endregion
