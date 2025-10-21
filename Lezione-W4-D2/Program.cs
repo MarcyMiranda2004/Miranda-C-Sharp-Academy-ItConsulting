@@ -2,6 +2,11 @@
 using Lezione_W4_D2.EssPrinter;
 using Lezione_W4_D2.EssFileUploader;
 using Lezione_W4_D2.EssBookHub;
+using Lezione_W4_D2.MethodInjection;
+using Lezione_W4_D2.EssAlertService;
+using Lezione_W4_D2.EssDataExporter;
+using Lezione_W4_D2.ConstructorInjection;
+using Lezione_W4_D2.EssEnum;
 using System.Text;
 
 namespace ConsoleApp
@@ -14,10 +19,18 @@ namespace ConsoleApp
 
             do
             {
+                Console.WriteLine();
                 Console.WriteLine($"Che Esercizio vuoi vedere ?");
                 Console.WriteLine($"[1] Setter Injection");
                 Console.WriteLine($"[2] Printer");
                 Console.WriteLine($"[3] Upload File");
+                Console.WriteLine($"[4] Book Hub");
+                Console.WriteLine($"[5] Method Injection");
+                Console.WriteLine($"[6] Alert Service");
+                Console.WriteLine($"[7] Data Exporter");
+                Console.WriteLine($"[8] Constructor Injection");
+                Console.WriteLine($"[9] Livelli di Accesso");
+                Console.WriteLine($"[10] Transazioni");
 
                 Console.WriteLine($"[0] Esci");
                 Console.WriteLine($"Scelta:");
@@ -40,6 +53,30 @@ namespace ConsoleApp
 
                     case 4:
                         EssBookHub();
+                        break;
+
+                    case 5:
+                        EsempioMethodInjection();
+                        break;
+
+                    case 6:
+                        EssAlertService();
+                        break;
+
+                    case 7:
+                        EssDataExporter();
+                        break;
+
+                    case 8:
+                        EsempioConstructorInjection();
+                        break;
+
+                    case 9:
+                        EssLvAccesso();
+                        break;
+
+                    case 10:
+                        EssTransazioni();
                         break;
 
                     case 0:
@@ -142,6 +179,84 @@ namespace ConsoleApp
             ordine.InvioOrdine(prodotto, prezzoBase);
 
             Console.WriteLine("\nOrdine completato con successo!");
+
+        }
+
+        public static void EsempioMethodInjection()
+        {
+            INotifier notifier = new EmailNotifier();
+            var service = new MethodInjNotificationService();
+            service.SendNotification("Luca", notifier);
+        }
+
+        public static void EssAlertService()
+        {
+            var alertService = new AlertService();
+
+            // Metodo SMS
+            var smsNotifier = new AlertSmsNotifier();
+            alertService.SendAlert("Sistema in manutenzione!", smsNotifier);
+        }
+
+        public static void EssDataExporter()
+        {
+            var data = new Data
+            {
+                Nome = "Report vendite",
+                Contenuto = "Totale vendite: 1200€"
+            };
+
+            var exporter = new DataExporter();
+
+            Console.WriteLine("Scegli il formato di esportazione:");
+            Console.WriteLine("1. JSON");
+            Console.WriteLine("2. XML");
+            Console.Write("Scelta: ");
+            int scelta = int.Parse(Console.ReadLine());
+
+            IExportFormatter formatter = scelta switch
+            {
+                1 => new ExportJSONStrategy(),
+                2 => new ExportXMLStrategy(),
+                _ => new ExportJSONStrategy()
+            };
+
+            exporter.Export(data, formatter);
+        }
+
+        public static void EsempioConstructorInjection()
+        {
+            ConsInjILogger logger = new ConsoleLogger();
+            UserService userService = new UserService(logger);
+            userService.CreateUser("Alice");
+        }
+
+        public static void EssLvAccesso()
+        {
+            var accessService = new LvAccesso();
+
+            Console.WriteLine("Scegli il livello di accesso:");
+            Console.WriteLine("[1] Guest");
+            Console.WriteLine("[2] Utente");
+            Console.WriteLine("[3] Moderatore");
+            Console.WriteLine("[4] Admin");
+            Console.Write("Scelta: ");
+
+            int scelta = int.Parse(Console.ReadLine());
+
+            var livello = scelta switch
+            {
+                1 => LivelloAccesso.OSPITE,
+                2 => LivelloAccesso.USER,
+                3 => LivelloAccesso.ADMIN,
+                _ => LivelloAccesso.OSPITE
+            };
+
+            accessService.Privilegi(livello);
+        }
+
+        public static void EssTransazioni()
+        {
 
         }
     }
