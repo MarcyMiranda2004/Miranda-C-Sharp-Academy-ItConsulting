@@ -257,7 +257,27 @@ namespace ConsoleApp
 
         public static void EssTransazioni()
         {
+            var transazione = new Lezione_W4_D2.EssEnum.Transazione();
 
+            Console.WriteLine("Scegli tipo di transazione:");
+            Console.WriteLine("1. Acquisto");
+            Console.WriteLine("2. Rimborso");
+            Console.WriteLine("3. Trasferimento");
+            Console.Write("Scelta: ");
+
+            int scelta = int.Parse(Console.ReadLine());
+            var tipo = scelta switch
+            {
+                1 => Lezione_W4_D2.EssEnum.TipoTransazione.ACQUISTO,
+                2 => Lezione_W4_D2.EssEnum.TipoTransazione.RIMBORSO,
+                3 => Lezione_W4_D2.EssEnum.TipoTransazione.TRASFERIMENTO,
+                _ => Lezione_W4_D2.EssEnum.TipoTransazione.ACQUISTO
+            };
+
+            Console.Write("Inserisci importo: ");
+            double importo = double.Parse(Console.ReadLine());
+
+            transazione.EffettuaTransazione(importo, tipo);
         }
     }
 }

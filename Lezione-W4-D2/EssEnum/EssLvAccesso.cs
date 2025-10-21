@@ -21,7 +21,6 @@ namespace Lezione_W4_D2.EssEnum
                 LivelloAccesso.OSPITE => $"Puoi visualizzare i vari contenuti con limitazioni",
                 LivelloAccesso.USER => $"Puoi visualizzare tutti i contenuti e modificare quelli da te creati",
                 LivelloAccesso.ADMIN => $"Puoi visualizzare e modificare i contenuti di tutti gli utenti",
-
                 _ => $"livello di Accesso non riconosciuto"
             };
 
