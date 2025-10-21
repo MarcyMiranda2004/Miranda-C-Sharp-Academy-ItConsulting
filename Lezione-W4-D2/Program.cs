@@ -79,6 +79,10 @@ namespace ConsoleApp
                         EssTransazioni();
                         break;
 
+                    case 11:
+                        EssNotificationSystem();
+                        break;
+
                     case 0:
                         Console.WriteLine($"Esco dal programma...");
                         break;
@@ -278,6 +282,31 @@ namespace ConsoleApp
             double importo = double.Parse(Console.ReadLine());
 
             transazione.EffettuaTransazione(importo, tipo);
+        }
+
+        public static void EssNotificationSystem()
+        {
+            Console.WriteLine($"Che notifica vuoi usare ?");
+            string scelta = Console.ReadLine();
+
+            var tipo = scelta.ToUpper() switch
+            {
+                "EMAIL" => TipoNotifica.EMAIL,
+                "SMS" => TipoNotifica.SMS,
+                "PUSH" => TipoNotifica.PUSH,
+                _ => TipoNotifica.EMAIL
+            };
+
+            INNotifier notifier = NNotifyFactory.CreaNotifica(tipo);
+
+            MessaggioService service = new MessaggioService(notifier);
+
+            Console.WriteLine($"Inserisci il testo del messaggio");
+            string messaggio = Console.ReadLine();
+
+            service.InviaMessaggio(messaggio);
+
+            Console.WriteLine($"Messaggio Inviato");
         }
     }
 }
