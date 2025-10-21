@@ -1,6 +1,7 @@
 ﻿using System;
 using Lezione_W4_D2.EssPrinter;
 using Lezione_W4_D2.EssFileUploader;
+using Lezione_W4_D2.EssBookHub;
 using System.Text;
 
 namespace ConsoleApp
@@ -98,6 +99,49 @@ namespace ConsoleApp
 
         public static void EssBookHub()
         {
+            Console.WriteLine($"Che articolo vuoi acquistare ?");
+
+            // Scelta prodotto
+            Console.WriteLine("Scegli il tipo di prodotto da acquistare:");
+            Console.WriteLine(" - LIBRO");
+            Console.WriteLine(" - FUMETTO");
+            Console.WriteLine(" - RIVISTA");
+            Console.Write("Inserisci il tipo: ");
+            string tipoProdotto = Console.ReadLine();
+
+            IProdotto prodotto = ProductFactory.CreaProdotto(tipoProdotto);
+
+            // Prezzo base
+            Console.Write("\nInserisci il prezzo base (€): ");
+            if (!double.TryParse(Console.ReadLine(), out double prezzoBase))
+            {
+                Console.WriteLine("Prezzo non valido. Riprova.");
+                return;
+            }
+
+            // Scelta metodo di pagamento
+            Console.WriteLine("\nScegli il metodo di pagamento:");
+            Console.WriteLine(" - PAYPAL");
+            Console.WriteLine(" - STRIPE");
+            Console.Write("Inserisci il metodo: ");
+            string metodoPagamento = Console.ReadLine();
+
+            IPaymentProcessor paymentProcessor = GatewayFactory.CreaGateway(metodoPagamento);
+
+            // Creazione servizi obbligatori
+            IInventoryService inventoryService = new InventoryService();
+
+            // Constructor Injection
+            OrderService ordine = new OrderService(inventoryService, paymentProcessor);
+
+            // Setter Injection (opzionale)
+            ordine.NotificationSender = new NotificationService();
+
+            // Invio ordine
+            Console.WriteLine("\n--- Elaborazione ordine ---\n");
+            ordine.InvioOrdine(prodotto, prezzoBase);
+
+            Console.WriteLine("\nOrdine completato con successo!");
 
         }
     }
