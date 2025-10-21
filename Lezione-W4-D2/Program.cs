@@ -31,7 +31,7 @@ namespace ConsoleApp
                 Console.WriteLine($"[8] Constructor Injection");
                 Console.WriteLine($"[9] Livelli di Accesso");
                 Console.WriteLine($"[10] Transazioni");
-
+                Console.WriteLine($"[11] Notifier Enum");
                 Console.WriteLine($"[0] Esci");
                 Console.WriteLine($"Scelta:");
                 scelta = int.Parse(Console.ReadLine());
@@ -289,6 +289,8 @@ namespace ConsoleApp
             Console.WriteLine($"Che notifica vuoi usare ?");
             string scelta = Console.ReadLine();
 
+            Console.WriteLine();
+
             var tipo = scelta.ToUpper() switch
             {
                 "EMAIL" => TipoNotifica.EMAIL,
@@ -304,7 +306,11 @@ namespace ConsoleApp
             Console.WriteLine($"Inserisci il testo del messaggio");
             string messaggio = Console.ReadLine();
 
+            Console.WriteLine();
+
             service.InviaMessaggio(messaggio);
+
+            Console.WriteLine();
 
             Console.WriteLine($"Messaggio Inviato");
         }
