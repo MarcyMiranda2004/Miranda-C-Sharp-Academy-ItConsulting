@@ -1,0 +1,5 @@
+C:\Users\marce\Desktop\GitHub\Miranda-C-Sharp-Academy-ItConsulting\Lezione-W4-D3\obj\Debug\net9.0\Lezione-W4-D3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\marce\Desktop\GitHub\Miranda-C-Sharp-Academy-ItConsulting\Lezione-W4-D3\obj\Debug\net9.0\Lezione-W4-D3.AssemblyInfoInputs.cache
+C:\Users\marce\Desktop\GitHub\Miranda-C-Sharp-Academy-ItConsulting\Lezione-W4-D3\obj\Debug\net9.0\Lezione-W4-D3.AssemblyInfo.cs
+C:\Users\marce\Desktop\GitHub\Miranda-C-Sharp-Academy-ItConsulting\Lezione-W4-D3\obj\Debug\net9.0\Lezione-W4-D3.csproj.CoreCompileInputs.cache
+C:\Users\marce\Desktop\GitHub\Miranda-C-Sharp-Academy-ItConsulting\Lezione-W4-D3\obj\Debug\net9.0\Lezione-W4-D3.sourcelink.json
