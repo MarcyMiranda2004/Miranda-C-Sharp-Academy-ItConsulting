@@ -32,13 +32,19 @@ namespace Lezione_W4_D3.EssOrdini.Domain
     public class Order
     {
         // vado ad usare delle proprietà al posto di semplici dati cosi che siano gestibili in caso di implementazioni future
-        public Guid IdOrder { get; init; }
-        public Guid IdCustomer { get; init; }
+        public Guid Id { get; init; }
+        public Customer Customer { get; init; }
         public List<OrderItem> _items { get; } = new();
         public OrderStatus Status { get; private set; }
         public decimal SubTotal => _items.Sum(i => i.total); // uso il metodo sum delle list per sommare i vari totali di tutti i prodotti nella list
 
-        public Order(Guid idCustomer) => IdCustomer = idCustomer; //costruttore
+        public Order(Customer customer) //costruttore
+        {
+            Id = Guid.NewGuid();
+            Customer = customer;
+            Status = OrderStatus.CREATED;
+        }
+
 
         public void AddItem(Product p, int quantity)
         {
@@ -69,7 +75,7 @@ namespace Lezione_W4_D3.EssOrdini.Domain
         Product? GetById(Guid Id);
         void Add(Product product);
         void Update(Product product);
-        void Delete(Product product);
+        void Delete(Guid Id);
         IEnumerable<Product> List();
     }
 
