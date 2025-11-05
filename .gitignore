@@ -1,0 +1,106 @@
+# =========================
+# === UNITY SPECIFICO ====
+# =========================
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+UserSettings/
+Recordings/
+
+# Visual Studio / Rider cache
+.vs/
+.idea/
+*.suo
+*.user
+*.userprefs
+*.csproj
+*.pidb
+*.unityproj
+*.booproj
+*.svd
+
+# Crash e profili
+sysinfo.txt
+*.stackdump
+*.temp
+*.bak
+*.swp
+*.tmp
+
+# Asset Store e pacchetti temporanei
+Assets/AssetStoreTools*
+Assets/Plugins/Editor/JetBrains*
+Assets/Plugins/Editor/Rider*
+
+# Collaborate cache
+.collabignore
+
+# =========================
+# === DOTNET / C# ========
+# =========================
+bin/
+obj/
+*.dbmdl
+*.bak
+*.log
+*.pdb
+*.cache
+*.config
+*.tlog
+*.vspscc
+*.vssscc
+_TestResults/
+TestResults/
+project.lock.json
+project.fragment.lock.json
+*.nuget.props
+*.nuget.targets
+.nuget/
+packages/
+*.snupkg
+
+# =========================
+# === NODE.JS ============
+# =========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+dist/
+build/
+.env
+.env.local
+.env.*.local
+
+# =========================
+# === SISTEMA E IDE ======
+# =========================
+# OS generici
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# VSCode / JetBrains
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# =========================
+# === ALTRO ==============
+# =========================
+# File temporanei personali
+*.bak
+*.tmp
+*.old
+*.orig
+*.log
+*.swp
+
+# Database o dati locali
